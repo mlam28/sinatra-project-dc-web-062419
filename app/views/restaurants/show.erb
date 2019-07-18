@@ -1,0 +1,23 @@
+<nav>
+  <a href="/">Home</a> |
+  <a href="/restaurants">Restaurants</a> 
+</nav>
+
+<h1><%=@restaurant.name%></h1>
+<h2><%=@restaurant.location%></h2>
+
+<h3>Users:</h3>
+<% @restaurant.users.each do |user| %>
+<ul>
+    <li><a href = "/users/<%=user.id%>"><%=user.name%></a></li>
+</ul>
+<% end %>
+
+<form method="POST" action="/restaurants/<%=@restaurant.id%>">
+<label>Enter your name below and click the button to add this restaurant to your list.</label>
+<br>
+<input type="text" name="user[:name]">
+<br>
+<input type = "submit" value="Add this restaurant to your queue!">
+</form>
+

@@ -1,0 +1,11 @@
+<nav>
+  <a href="/">Home</a> | 
+</nav>
+
+<h1>All Restaurants</h1>
+
+<% @restaurants.each do |restaurant|%>
+<ul>
+ <li><a href = "/restaurants/<%=restaurant.id%>"><%=restaurant.name%></a></li>
+</ul>
+<% end %>

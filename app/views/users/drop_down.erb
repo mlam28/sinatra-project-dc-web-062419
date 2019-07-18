@@ -1,0 +1,12 @@
+<h1>Use the drop down menu to choose restaurants!</h1>
+
+
+<form action="/users/<%=@user.id%>" method="POST">
+<select name="user[restaurants][]">
+<% @restaurants.each do |restaurant| %>
+ <option value="<%=restaurant.id%>"><%=restaurant.name%></option>
+ <% end %>
+</select>
+<input type="submit" value="submit">
+</form>
+
